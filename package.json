@@ -1,0 +1,22 @@
+{
+  "name": "marked-plaintext",
+  "version": "0.0.1",
+  "description": "Plain text renderer for Marked",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:etler/marked-plaintext.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "marked",
+    "markdown",
+    "plaintext",
+    "text",
+    "renderer"
+  ],
+  "author": "Tim Etler",
+  "license": "ISC"
+}
