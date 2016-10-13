@@ -1,6 +1,6 @@
 function Renderer (options) {
   this.options = options || {};
-  this.whitespaceDelimiter = this.options.spaces ? '&#x20;' : '&#10;';
+  this.whitespaceDelimiter = this.options.spaces ? ' ' : '\n';
 }
 
 Renderer.prototype.code = function(code, lang, escaped) {
