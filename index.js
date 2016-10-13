@@ -24,7 +24,7 @@ Renderer.prototype.listitem = function(text) {
   return '\t' + text + '\n';
 }
 Renderer.prototype.paragraph = function(text) {
-  return '\n' + text + '\n';
+  return '\n' + text + '&#x20;\n';
 }
 Renderer.prototype.table = function(header, body) {
   return  '\n' + header + '\n' + body + '\n';
