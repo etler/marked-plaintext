@@ -1,12 +1,13 @@
 function Renderer (options) {
   this.options = options || {};
+  this.whitespaceDelimiter = this.options.spaces ? ' ' : '\n';
 }
 
 Renderer.prototype.code = function(code, lang, escaped) {
-  return '\n\n' + code + '\n\n';
+  return this.whitespaceDelimiter + this.whitespaceDelimiter + code + this.whitespaceDelimiter + this.whitespaceDelimiter;
 }
 Renderer.prototype.blockquote = function(quote) {
-  return '\t' + quote + '\n';
+  return '\t' + quote + this.whitespaceDelimiter;
 }
 Renderer.prototype.html = function(html) {
   return html;
@@ -15,22 +16,22 @@ Renderer.prototype.heading = function(text, level, raw) {
   return text;
 }
 Renderer.prototype.hr = function() {
-  return '\n\n';
+  return this.whitespaceDelimiter + this.whitespaceDelimiter;
 }
 Renderer.prototype.list = function(body, ordered) {
   return body;
 }
 Renderer.prototype.listitem = function(text) {
-  return '\t' + text + '\n';
+  return '\t' + text + this.whitespaceDelimiter;
 }
 Renderer.prototype.paragraph = function(text) {
-  return '\n' + text + '\n';
+  return this.whitespaceDelimiter + text + this.whitespaceDelimiter;
 }
 Renderer.prototype.table = function(header, body) {
-  return  '\n' + header + '\n' + body + '\n';
+  return  this.whitespaceDelimiter + header + this.whitespaceDelimiter + body + this.whitespaceDelimiter;
 }
 Renderer.prototype.tablerow = function(content) {
-  return content + '\n';
+  return content + this.whitespaceDelimiter;
 }
 Renderer.prototype.tablecell = function(content, flags) {
   return content + '\t';
@@ -45,7 +46,7 @@ Renderer.prototype.codespan = function(text) {
   return text;
 }
 Renderer.prototype.br = function() {
-  return '\n\n';
+  return this.whitespaceDelimiter + this.whitespaceDelimiter;
 }
 Renderer.prototype.del = function(text) {
   return text;
