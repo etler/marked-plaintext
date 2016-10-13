@@ -1,6 +1,6 @@
 {
   "name": "marked-plaintext",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Plain text renderer for Marked",
   "main": "index.js",
   "repository": {
