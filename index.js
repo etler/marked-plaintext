@@ -1,7 +1,7 @@
 function Renderer (options) {
   this.options = options || {};
   this.whitespaceDelimiter = this.options.spaces ? ' ' : '\n';
-  this.showImageText = 'showImageText' in this.options ? this.options.showImageText : true;
+  this.showImageText = (typeof this.options !== 'undefined') ? this.options.showImageText : true;
 }
 
 Renderer.prototype.code = function(code, lang, escaped) {
@@ -38,10 +38,10 @@ Renderer.prototype.tablecell = function(content, flags) {
   return content + '\t';
 }
 Renderer.prototype.strong = function(text) {
- return text;
+  return text;
 }
 Renderer.prototype.em = function(text) {
- return text;
+  return text;
 }
 Renderer.prototype.codespan = function(text) {
   return text;
