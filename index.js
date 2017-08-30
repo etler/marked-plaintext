@@ -1,6 +1,7 @@
 function Renderer (options) {
   this.options = options || {};
   this.whitespaceDelimiter = this.options.spaces ? ' ' : '\n';
+  this.showImageText = (typeof this.options !== 'undefined') ? this.options.showImageText : true;
 }
 
 Renderer.prototype.code = function(code, lang, escaped) {
@@ -55,7 +56,7 @@ Renderer.prototype.link = function(href, title, text) {
   return text;
 }
 Renderer.prototype.image = function(href, title, text) {
-  return text;
+  return this.showImageText ? text : '';
 }
 Renderer.prototype.text = function(text) {
   return text;
